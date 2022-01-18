@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap')
+
+$main-font: 'Montserrat', sans-serif
+// colors
+$background: #343a40
+$blue: #2c698d
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+  font-family: $main-font
+
+
+.main
+  display: flex
+  width: 100%
+  height: 100vh
+  background: $background url('../assets/weather.jpg') no-repeat center center
+  background-size: cover
+  align-items: center
+  flex-direction: column
+  @media screen and ( min-width:  992px)
+    flex-direction: row
+    align-items: flex-start
+  h2
+    color: white
+    margin-top: 40px
+    font-size: 4vh
+    @media screen and ( min-width:  992px)
+      align-self: center
+      margin-left: auto
+  .city-details
+      display: flex 
+      gap: .5rem
+      flex-direction: column
+      .details
+        display: flex
+        font-size: 22px
+        color: white
+        gap: .5rem
+        justify-content: center
+        align-items: center
+      @media screen and ( min-width:  992px)
+        align-self: center
+        margin-left: auto
+        
+      .details
+
+      img
+        width: 60px
+        height: 60px
+        object-fit: contain
+        border-radius: 40px
+      h2
+        color: white
+        margin-top: 40px
+        font-size: 4vh
+        @media screen and ( min-width:  992px)
+          align-self: center
+          margin-left: auto
+  .info
+    display: flex
+    flex-direction: column
+    margin: 150px auto
+    padding: 15px
+    width: 95%
+    position: relative
+    background-color: #0b0b0c77
+    backdrop-filter: blur(10px)
+    border-radius: 5px
+    box-shadow: 0px 0px 3px #111
+    
+    @media screen and ( min-width:  992px)
+      height: 100%
+      width: 40%
+      margin: 0px 0px 0px auto
+    form
+      display: flex
+      width: 100%
+      align-items: center
+      justify-content: center
+      @media screen and ( min-width:  992px)
+        margin-top: 30px
+      .search
+        width: 90%
+        padding: 5px 6px
+        font-size: 18px
+        border: none
+        border-bottom: 2px solid black
+        transition: all .2s ease
+        background-color: #0b0b0ca9
+        color: white
+        outline: none
+        
+        &:focus
+              border-bottom: 2px solid $blue
+      .submit
+        height: 4vh
+        width: 100px
+        background-color: #fca311
+        color: white
+        border: none
+        cursor: pointer
+        display: flex
+        justify-content: center
+        align-items: center
+        font-size: 17px
+    .information
+      display: flex
+      flex-direction: column
+      color: white
+      gap: 1rem
+      margin-top: 30px
+     
+
+      .details
+        list-style-type: none
+        display: flex
+        flex-direction: column
+        gap: .5rem
+
+        
+
+.loading
+  display: flex
+  justify-content: center
+  align-items: center
+  height: 100vh
+  width:100%
+  background-color: $background 
+  h2
+    color: white
+    font-size: 5vh
+    animation: loading .7s ease infinite alternate
+    @keyframes loading
+      0%
+        transform: scale(1)
+      100%
+        transform: scale(1.1)
