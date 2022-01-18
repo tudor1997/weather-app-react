@@ -3,7 +3,7 @@ import { WeatherContextAPI } from '../context/ApiContext'
 
 const Info = () => {
     const {weatherData} = useContext(WeatherContextAPI);
-        console.log(weatherData)
+       
    
     const {location, current, request} = weatherData
    
