@@ -65,7 +65,7 @@ const Main = () => {
             <div className="details">
               <h3 className="city-name">{name}</h3>
               <div className="temp-container">
-                <h4 className="temperature">{temp}&#8451;</h4>
+                <h4 className="temperature">{Math.round(temp)}&#8451;</h4>
                 <img
                   src={`${imgURL}/${weatherData.weather[0].icon}@2x.png`}
                   alt=""
