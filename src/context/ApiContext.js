@@ -1,5 +1,5 @@
 import React, { createContext, useState,useEffect } from "react";
-import { currentURL } from "../utils/api";
+
 
 const WeatherContextAPI = createContext();
 
@@ -11,6 +11,7 @@ const WeatherContext = ({children}) => {
        try{
         const data = await fetch(api)
         const result = await data.json();
+        console.log(result)
         setWeatherData(result);
     }catch(err) { console.log(err)}
     }

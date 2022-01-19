@@ -2,14 +2,14 @@ import React, { useContext, useState } from 'react'
 import Info from './Info';
 import {BsSearch} from 'react-icons/bs'
 import { WeatherContextAPI } from '../context/ApiContext';
-import { currentURL } from '../utils/api';
+import { createURL } from '../utils/api';
 const Search = () => {
     const [name, setName] = useState('');
     const {fetchData} = useContext(WeatherContextAPI)
    
    const handleSubmit = (e) =>{
        e.preventDefault();
-    fetchData(currentURL + name);
+    fetchData(createURL(name));
     
    }
     return (

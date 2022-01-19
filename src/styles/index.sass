@@ -14,7 +14,8 @@ $blue: #2c698d
 .main
   display: flex
   width: 100%
-  height: 100vh
+  min-height: 100vh
+  height: 100%
   background: $background url('../assets/weather.jpg') no-repeat center center
   background-size: cover
   align-items: center
@@ -29,13 +30,56 @@ $blue: #2c698d
     @media screen and ( min-width:  992px)
       align-self: center
       margin-left: auto
+      font-size: 40px
+  .container
+    padding: 10px
+    align-self: center
+    text-align: center
+    @media screen and ( min-width:  992px)
+      margin-left: auto
+    h2
+      color: white
+      margin-top: 40px
+      font-size: 4vh
+      @media screen and ( min-width:  992px)
+        align-self: center
+        margin-left: auto
+        font-size: 40px
+    .time
+        color: white
+        font-size: 30px
+        align-self: center
+        margin-top: 20px
+        font-weight: 700
+        
+        @media screen and ( min-width:  992px)
+          margin-left: 20px
+          margin-top: 40px
+          font-size: 35px
+    .date_now
+        color: white
+        font-size: 23px
+        align-self: center
+        margin-top: 10px
   .city-details
       display: flex 
       gap: .5rem
       flex-direction: column
+      text-align: center
+      .time
+        color: white
+        font-size: 30px
+        align-self: center
+        @media screen and ( min-width:  992px)
+          margin-top: 40px
+          margin-left: 50px
+      .date_now
+        color: white
+        font-size: 23px
       .details
         display: flex
-        font-size: 22px
+        flex-direction: column
+        font-size: 25px
         color: white
         gap: .5rem
         justify-content: center
@@ -45,19 +89,22 @@ $blue: #2c698d
         margin-left: auto
         
       .details
-
-      img
-        width: 60px
-        height: 60px
-        object-fit: contain
-        border-radius: 40px
-      h2
-        color: white
-        margin-top: 40px
-        font-size: 4vh
-        @media screen and ( min-width:  992px)
-          align-self: center
-          margin-left: auto
+        .temp-container
+          display: flex
+          align-items: center
+          justify-content: center
+          img
+            width: 60px
+            height: 60px
+            object-fit: contain
+            border-radius: 40px
+          h2
+            color: white
+            margin-top: 40px
+            font-size: 4vh
+            @media screen and ( min-width:  992px)
+              align-self: center
+              margin-left: auto
   .info
     display: flex
     flex-direction: column
@@ -65,16 +112,26 @@ $blue: #2c698d
     padding: 15px
     width: 95%
     position: relative
-    background-color: #0b0b0c77
-    backdrop-filter: blur(10px)
+    
+    
     border-radius: 5px
     box-shadow: 0px 0px 3px #111
-    
+    &::before
+      content: ""
+      width: 100%
+      height: 100%
+      position: absolute
+      top: 0
+      left: 0
+      background-color: #0b0b0c77
+      backdrop-filter: blur(2px)
     @media screen and ( min-width:  992px)
+      min-height: 100vh
       height: 100%
       width: 40%
       margin: 0px 0px 0px auto
     form
+      z-index: 1
       display: flex
       width: 100%
       align-items: center
@@ -111,9 +168,10 @@ $blue: #2c698d
       color: white
       gap: 1rem
       margin-top: 30px
-     
+      z-index: 1
 
       .details
+        
         list-style-type: none
         display: flex
         flex-direction: column
