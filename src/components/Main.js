@@ -1,9 +1,9 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState,useEffect } from "react";
 import { WeatherContextAPI } from "../context/ApiContext";
 import Loading from "./Loading";
 import Search from "./Search";
 import { imgURL } from "../utils/api";
-import { useEffect } from "react/cjs/react.development";
+
 
 const Main = () => {
   const { loading, weatherData } = useContext(WeatherContextAPI);
