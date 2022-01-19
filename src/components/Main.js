@@ -43,10 +43,11 @@ const Main = () => {
       const hour = time.getHours();
       const hoursIn12HrFormat = hour >= 13 ? `0${hour % 12}` : hour;
       const minutes = time.getMinutes();
+      const minutesFormat = minutes <= 9 ? `0${minutes}` : minutes
       const ampm = hour >= 12 ? "PM" : "AM";
       setTimeAMPM(ampm);
-      let timeEl = `${hoursIn12HrFormat}:${minutes} `;
-      let time_date = `${days[day]},${date}  ${months[month]}`;
+      let timeEl = `${hoursIn12HrFormat}:${minutesFormat} `;
+      let time_date = `${days[day]}, ${date}  ${months[month]}`;
       setDateNow(time_date);
       setTimeNow(timeEl);
     }, 1000);
