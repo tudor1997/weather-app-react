@@ -11,7 +11,6 @@ const WeatherContext = ({children}) => {
        try{
         const data = await fetch(api)
         const result = await data.json();
-        console.log(result)
         setWeatherData(result);
     }catch(err) { console.log(err)}
     }
@@ -21,7 +20,7 @@ const WeatherContext = ({children}) => {
         }, 2000)
     },[])
    
-    return <WeatherContextAPI.Provider value={{loading,weatherData, fetchData, }}>
+    return <WeatherContextAPI.Provider value={{loading,weatherData, fetchData }}>
         {children}
     </WeatherContextAPI.Provider>
 }

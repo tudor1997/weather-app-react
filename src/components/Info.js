@@ -3,17 +3,11 @@ import { WeatherContextAPI } from '../context/ApiContext'
 
 const Info = () => {
     const {weatherData} = useContext(WeatherContextAPI);
-       
-   
-    const {main, sys,wind,coord} = weatherData
-   
-        if(Object.keys(weatherData).length > 0) {
-          
+ 
+        if(Object.keys(weatherData).length > 0 && weatherData.main && weatherData.sys && weatherData.wind && weatherData.coord) {
+            const {main, sys,wind,coord} = weatherData
             return (
                 <div className='information'>
-                    
-                  
-                   
                    <ul className='details'>
                        <h3>Location Details</h3>
                        <li>Country: {sys.country}</li>
@@ -32,7 +26,8 @@ const Info = () => {
                 </div>
             )
         }else{
-          return  <div></div>
+          return  <div>
+          </div>
         }
 }
 

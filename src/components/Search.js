@@ -1,6 +1,5 @@
 import React, { useContext, useState } from 'react'
 import Info from './Info';
-import {BsSearch} from 'react-icons/bs'
 import { WeatherContextAPI } from '../context/ApiContext';
 import { createURL } from '../utils/api';
 const Search = () => {
@@ -9,7 +8,14 @@ const Search = () => {
    
    const handleSubmit = (e) =>{
        e.preventDefault();
-    fetchData(createURL(name));
+       const regex = /^([a-zA-Z\u0080-\u024F]+(?:. |-| |'))*[a-zA-Z\u0080-\u024F]*$/
+      const valid = regex.test(name)
+     
+    if(valid && name !== "") {
+        fetchData(createURL(name));
+    }else{
+        console.log("No city with that name was found")
+    }
     
    }
     return (
