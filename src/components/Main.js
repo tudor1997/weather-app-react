@@ -56,7 +56,7 @@ const Main = () => {
     return <Loading></Loading>;
   } else {
    
-    if (Object.keys(weatherData).length > 0 && weatherData.temp) {
+    if (Object.keys(weatherData).length > 0 && weatherData.main) {
       let { temp } = main;
 
       return (
